@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand ml-3" href="#">Rubbish Talk Generator</a>
+</nav>
+<main>
+  <legend class="my-3 text-center">你想對誰說幹話？</legend>
+  <form method="POST" action="/">
+    <fieldset class="form-group">
+      <div class="d-flex justify-content-center career-radio">
+        <div class="card" style="width: 18rem;">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+            class="card-img-top" alt="angry-developer" height="200px">
+          <div class="form-check custom-control custom-radio text-center">
+            <input class="form-check-input" type="radio" name="career" id="engineer" value="engineer"
+              {{#ifChecked career "engineer"}}checked{{/ifChecked}}>
+            <label class="form-check-label" for="engineer">
+              工程師
+            </label>
+          </div>
+        </div>
+        <div class="card mx-5" style="width: 18rem;">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+            class="card-img-top" alt="angry-designer" height="200px">
+          <div class="form-check custom-control custom-radio text-center">
+            <input class="form-check-input" type="radio" name="career" id="designer" value="designer"
+              {{#ifChecked career "designer"}}checked{{/ifChecked}}>
+            <label class="form-check-label" for="designer">
+              設計師
+            </label>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+            class="card-img-top" alt="angry-founder" height="200px">
+          <div class="form-check custom-control custom-radio text-center">
+            <input class="form-check-input" type="radio" name="career" id="entrepreneur" value="entrepreneur"
+              {{#ifChecked career "entrepreneur"}}checked{{/ifChecked}}>
+            <label class="form-check-label" for="entrepreneur">
+              創業家
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" class="btn btn-success mr-3" style="height: 50px;">產生幹話</button>
+        <textarea type="text" class="text"
+          style="width: 40rem; height: 100px">{{#if career}}身為{{career}}，{{/if}}{{#if rubbish}}{{rubbish}}{{/if}}</textarea>
+      </div>
+    </fieldset>
+  </form>
+</main>
