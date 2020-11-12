@@ -1,6 +1,6 @@
 # rubbishtalk_generator
 
-Just be relax from any annoying word!
+Just be relax, take these annoying words easy!
 
 ![Image](https://raw.githubusercontent.com/ywcwy/rubbishtalk_generator/master/rubbishtalk.png)
 
