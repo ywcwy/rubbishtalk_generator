@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 handlebars.registerHelper('ifChecked', function (career, target, options) {
   if (career === target) {
-    return options.fn(this);
+    return options.fn(this);  // handlebars內文字，出現在條件成立
   }
-  return options.inverse(this);
+  return options.inverse(this);  //handlebars內文字，出現條件不成立
 });
 
 

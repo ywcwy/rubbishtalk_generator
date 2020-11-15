@@ -9,29 +9,16 @@ const phrase = ['很簡單吧？', '這很容易吧？', '應該很快吧？', '
 function rubbishTalkGenerator(target) {
   let rubbishTalk = ''
   // 確認使用者選擇的target
-  if (target === 'engineer') {
-    // 找到該target的適用幹話
-    const randomTask = task.engineer[Math.floor(Math.random() * task.engineer.length)]
-    const randomPhrase = phrase[Math.floor(Math.random() * phrase.length)]
-    rubbishTalk = randomTask + "，" + randomPhrase
-  } else if (target === 'designer') {
-    const randomTask = task.designer[Math.floor(Math.random() * task.designer.length)]
-    const randomPhrase = phrase[Math.floor(Math.random() * phrase.length)]
-    rubbishTalk = randomTask + "，" + randomPhrase
-  } else if (target === 'entrepreneur') {
-    const randomTask = task.entrepreneur[Math.floor(Math.random() * task.entrepreneur.length)]
-    const randomPhrase = phrase[Math.floor(Math.random() * phrase.length)]
-    rubbishTalk = randomTask + "，" + randomPhrase
-  } else if (!target) { // 如果沒選target
+  if (!target) { // 如果沒選target
     return (`請選擇一人物`)
+  } else {
+    // 找到該target的適用幹話
+    const randomTask = task[target][Math.floor(Math.random() * task[target].length)]
+    const randomPhrase = phrase[Math.floor(Math.random() * phrase.length)]
+    rubbishTalk = randomTask + "，" + randomPhrase
   }
-
-
-
 
   //return
   return rubbishTalk
-
-
 }
 module.exports = rubbishTalkGenerator
